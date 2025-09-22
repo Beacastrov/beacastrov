@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio IE 2025 — Beatriz Castro Vega</title>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- si ya estás usando styles-v2.css, deja esa ruta; si no, usa styles.css -->
+  <link rel="stylesheet" href="styles-v2.css?v=2" />
 </head>
 <body>
 
-  <!-- NAVBAR FIJO -->
+  <!-- NAV simple (puedes borrarlo si no lo quieres) -->
   <nav class="site-nav">
     <a href="#inicio">Inicio</a>
-    <a href="#proceso">Wireframe / Proceso</a>
-    <a href="#proyectos">Encargos</a>
-    <a href="#reflexion">Reflexión</a>
+    <a href="#encargos">Encargos</a>
   </nav>
 
   <!-- TÍTULO -->
@@ -23,29 +22,17 @@
 
   <main class="wrap">
 
-    <!-- BURBUJA DE PRESENTACIÓN -->
+    <!-- BURBUJA DE PRESENTACIÓN (texto que tú misma definiste) -->
     <section class="bubble">
-      <p>
-        <strong>Imagen Escrita</strong> es una asignatura que se centra en la intersección entre
-        diseño, la programación y arte generativo. Utilizando <strong>p5.js</strong> como herramienta principal,
-        el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.
-      </p>
-      <p>
-        A través del <em>creative coding</em> se hace énfasis en el pensamiento computacional como herramienta de diseño,
-        fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística.
-        La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como
-        complemento al proceso de diseño y programación.
-      </p>
+      <p><strong>Imagen escrita</strong> es una asignatura que se centra en la intersección entre diseño, la programación y arte generativo. Utilizando <strong>p5.js</strong> como herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.</p>
+      <p>A través del <em>creative coding</em> se hace énfasis en el pensamiento computacional como herramienta de diseño, fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como complemento al proceso de diseño y programación.</p>
     </section>
 
-    <!-- ACORDEÓN: SOBRE LA AUTORA -->
+    <!-- SOBRE LA AUTORA (desplegable) -->
     <details class="accordion">
       <summary class="accordion__summary">Sobre la autora</summary>
       <div class="accordion__content">
-        <p>
-          Este sitio web fue desarrollado como parte del curso <strong>Imagen Escrita 2025</strong> por
-          <strong>Beatriz Castro Vega</strong>, alumna de Diseño en la Pontificia Universidad Católica de Valparaíso.
-        </p>
+        <p>Este sitio web fue desarrollado como parte del curso <strong>Imagen Escrita 2025</strong> por <strong>Beatriz Castro Vega</strong>, alumna de Diseño en la Pontificia Universidad Católica de Valparaíso.</p>
         <p><strong>Redes de contacto:</strong></p>
         <div class="btn-row">
           <a class="btn pastel-1" href="https://wiki.ead.pucv.cl/Beatriz_Castro_Vega" target="_blank" rel="noopener">Perfil wikicasiopea</a>
@@ -61,68 +48,19 @@
       </a>
     </div>
 
-    <!-- SECCIÓN: PROCESO / WIREFRAME -->
-    <section id="proceso" class="wrap section-block">
-      <h2 class="section-title">Wireframe / Proceso</h2>
-      <div class="proceso">
-        <div class="wf">
-          <pre class="wf-box">
-[ Título grande (gradiente pastel) ]
-[ Burbuja de presentación (texto)   ]
-[ Acordeón "Sobre la autora" + links]
-[ Botón "Wiki del proyecto"         ]
-[ Encargos: 4 botones en fila       ]
-          </pre>
-        </div>
-        <div class="decisiones">
-          <h3>Decisiones de diseño</h3>
-          <ul>
-            <li>Paleta en tonos pasteles sobre fondo oscuro para contraste y legibilidad.</li>
-            <li>Jerarquía clara: título grande, subtítulos y botones consistentes.</li>
-            <li>Grilla responsive (4 → 2 → 1) para los encargos.</li>
-            <li>Micro-interacciones: hover, sombras y transiciones en botones.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENCARGOS p5.js -->
-    <section id="proyectos">
+    <!-- ENCARGOS p5.js (SOLO ESTO, SIN OTRAS SECCIONES) -->
+    <section id="encargos">
       <h2 class="section-title">Encargos p5.js</h2>
       <div class="grid-4">
         <a class="card-btn pastel-1" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega">
-          Encargo 1
-        </a>
+           href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega">Encargo 1</a>
         <a class="card-btn pastel-2" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro">
-          Encargo 2
-        </a>
+           href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro">Encargo 2</a>
         <a class="card-btn pastel-3" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega">
-          Encargo 3
-        </a>
+           href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega">Encargo 3</a>
         <a class="card-btn pastel-4" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega">
-          Encargo 4
-        </a>
+           href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega">Encargo 4</a>
       </div>
-    </section>
-
-    <!-- REFLEXIÓN -->
-    <section id="reflexion" class="wrap section-block">
-      <h2 class="section-title">Reflexión</h2>
-      <p class="muted">
-        El sitio buscó una identidad minimalista y legible, usando p5.js como eje de los encargos.
-        Aprendí a estructurar contenido con HTML, separar estilos en CSS y publicar con GitHub Pages.
-        La navegación simple y los botones temáticos permiten acceder rápido a la documentación en la Wiki.
-        Para próximas versiones, me gustaría ampliar la responsividad tipográfica e incorporar una galería con
-        capturas de los sketches.
-      </p>
-      <p>
-        Repositorio: <a href="https://github.com/Beacastrov/beacastrov" target="_blank" rel="noopener">github.com/Beacastrov/beacastrov</a><br>
-        Sitio publicado: <a href="https://beacastrov.github.io/beacastrov/" target="_blank" rel="noopener">beacastrov.github.io/beacastrov/</a>
-      </p>
     </section>
 
   </main>
