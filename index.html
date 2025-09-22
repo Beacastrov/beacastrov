@@ -1,44 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Beatriz Castro - Sitio Personal</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio IE 2025 — Beatriz Castro Vega</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Beatriz Castro</h1>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+
+  <header class="wrap">
+    <h1 class="title-pastel">Portafolio IE 2025</h1>
   </header>
 
-  <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy estudiante de diseño y este es mi portafolio de Imagen Escrita.</p>
+  <main class="wrap">
+
+    <!-- Burbuja de presentación -->
+    <section class="bubble">
+      <p>
+        <strong>Imagen Escrita</strong> es una asignatura que se centra en la intersección entre
+        diseño, la programación y arte generativo. Utilizando <strong>p5.js</strong> como herramienta principal,
+        el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.
+      </p>
+      <p>
+        A través del <em>creative coding</em> se hace énfasis en el pensamiento computacional como herramienta de diseño,
+        fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística.
+        La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como
+        complemento al proceso de diseño y programación.
+      </p>
     </section>
 
-    <section id="proyectos">
-      <h2>Mis proyectos</h2>
-      <ul>
-        <li><a href="#">Proyecto 1</a></li>
-        <li><a href="#">Proyecto 2</a></li>
-        <li><a href="#">Proyecto 3</a></li>
-        <li><a href="#">Proyecto 4</a></li>
-      </ul>
+    <!-- Botón que despliega info de la autora -->
+    <details class="accordion">
+      <summary class="accordion__summary">Sobre la autora</summary>
+      <div class="accordion__content">
+        <p>
+          Este sitio web fue desarrollado como parte del curso <strong>Imagen Escrita 2025</strong> por
+          <strong>Beatriz Castro Vega</strong>, alumna de Diseño en la Pontificia Universidad Católica de Valparaíso.
+        </p>
+        <p><strong>Redes de contacto:</strong></p>
+        <div class="btn-row">
+          <a class="btn pastel-1" href="https://wiki.ead.pucv.cl/Beatriz_Castro_Vega" target="_blank" rel="noopener">Perfil wikicasiopea</a>
+          <a class="btn pastel-2" href="mailto:beatriz.castro.v@mail.pucv.cl">Correo</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Botón wiki del proyecto -->
+    <div class="center">
+      <a class="btn xl pastel-3" href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+        Wiki del proyecto
+      </a>
+    </div>
+
+    <!-- Encargos p5.js -->
+    <section>
+      <h2 class="section-title">Encargos p5.js</h2>
+      <div class="grid-4">
+        <a class="card-btn pastel-1" target="_blank" rel="noopener"
+           href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega">
+          Encargo 1
+        </a>
+        <a class="card-btn pastel-2" target="_blank" rel="noopener"
+           href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro">
+          Encargo 2
+        </a>
+        <a class="card-btn pastel-3" target="_blank" rel="noopener"
+           href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega">
+          Encargo 3
+        </a>
+        <a class="card-btn pastel-4" target="_blank" rel="noopener"
+           href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega">
+          Encargo 4
+        </a>
+      </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Correo: becastro@example.com</p>
-    </section>
   </main>
 
-  <footer>
-    <p>© 2025 – Sitio personal de Beatriz Castro publicado en GitHub Pages</p>
+  <footer class="wrap footer">
+    <small>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</small>
   </footer>
+
 </body>
 </html>
