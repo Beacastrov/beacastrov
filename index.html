@@ -4,14 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio IE 2025 — Beatriz Castro Vega</title>
-  <!-- si ya estás usando styles-v2.css, deja esa ruta; si no, usa styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV simple (puedes borrarlo si no lo quieres) -->
+  <!-- CANVAS de fondo interactivo -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV simple -->
   <nav class="site-nav">
     <a href="#inicio">Inicio</a>
+    <a href="#previews">Portadas</a>
     <a href="#encargos">Encargos</a>
   </nav>
 
@@ -22,7 +25,7 @@
 
   <main class="wrap">
 
-    <!-- BURBUJA DE PRESENTACIÓN (texto que tú misma definiste) -->
+    <!-- BURBUJA DE PRESENTACIÓN -->
     <section class="bubble">
       <p><strong>Imagen escrita</strong> es una asignatura que se centra en la intersección entre diseño, la programación y arte generativo. Utilizando <strong>p5.js</strong> como herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.</p>
       <p>A través del <em>creative coding</em> se hace énfasis en el pensamiento computacional como herramienta de diseño, fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como complemento al proceso de diseño y programación.</p>
@@ -48,7 +51,30 @@
       </a>
     </div>
 
-    <!-- ENCARGOS p5.js (SOLO ESTO, SIN OTRAS SECCIONES) -->
+    <!-- PORTADAS DE LOS SKETCHES (previews en vivo) -->
+    <section id="previews" class="wrap section-block">
+      <h2 class="section-title">Portadas de los sketches</h2>
+      <div class="previews-grid">
+        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" target="_blank" rel="noopener">
+          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" title="Encargo 1" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <span class="preview-caption">Encargo 1</span>
+        </a>
+        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" target="_blank" rel="noopener">
+          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" title="Encargo 2" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <span class="preview-caption">Encargo 2</span>
+        </a>
+        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" target="_blank" rel="noopener">
+          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" title="Encargo 3" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <span class="preview-caption">Encargo 3</span>
+        </a>
+        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" target="_blank" rel="noopener">
+          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" title="Encargo 4" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <span class="preview-caption">Encargo 4</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ENCARGOS p5.js (los botones se mantienen) -->
     <section id="encargos">
       <h2 class="section-title">Encargos p5.js</h2>
       <div class="grid-4">
@@ -69,5 +95,74 @@
     <small>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</small>
   </footer>
 
+  <!-- === Fondo interactivo (vanilla JS, sin librerías) === -->
+  <script>
+    (function(){
+      const c = document.getElementById('bg-canvas');
+      const ctx = c.getContext('2d', { alpha: true });
+      let W, H, orbs = [], mouse = {x: 0, y: 0};
+
+      function resize(){
+        W = c.width = window.innerWidth;
+        H = c.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize, {passive:true});
+      resize();
+
+      const PALETTE = ['#ff9bb3','#ffc77a','#8ff0b6','#9ec6ff','#d5a8ff'];
+
+      function makeOrb() {
+        const r = Math.random()*22 + 10;
+        return {
+          x: Math.random()*W,
+          y: Math.random()*H,
+          r,
+          vx: (Math.random()*1.2 - 0.6),
+          vy: (Math.random()*1.2 - 0.6),
+          color: PALETTE[(Math.random()*PALETTE.length)|0],
+          a: 0.18 + Math.random()*0.12
+        };
+      }
+
+      for (let i=0;i<26;i++) orbs.push(makeOrb());
+
+      window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX; mouse.y = e.clientY;
+      }, {passive:true});
+
+      function step(){
+        ctx.clearRect(0,0,W,H);
+        for (const o of orbs){
+          // movimiento básico
+          o.x += o.vx; o.y += o.vy;
+
+          // rebote en bordes
+          if (o.x < -50) o.x = W+50;
+          if (o.x > W+50) o.x = -50;
+          if (o.y < -50) o.y = H+50;
+          if (o.y > H+50) o.y = -50;
+
+          // leve atracción al mouse
+          const dx = mouse.x - o.x, dy = mouse.y - o.y;
+          const d2 = dx*dx + dy*dy;
+          if (d2 < 180*180) { // zona de influencia
+            o.vx += dx * 0.00004;
+            o.vy += dy * 0.00004;
+          }
+
+          // dibujar
+          const g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r*1.4);
+          g.addColorStop(0, o.color + 'ee');
+          g.addColorStop(1, o.color + '00');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, o.r, 0, Math.PI*2);
+          ctx.fill();
+        }
+        requestAnimationFrame(step);
+      }
+      step();
+    })();
+  </script>
 </body>
 </html>
