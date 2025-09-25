@@ -41,54 +41,64 @@
       </div>
     </details>
 
+    <!-- Botón wiki -->
     <div class="center">
-      <a class="btn xl pastel-3" href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">Wiki del proyecto</a>
+      <a class="btn xl pastel-3" href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">wiki del proyecto</a>
     </div>
 
-    <!-- ENCARGOS: 2 columnas / 1-2 arriba, 3-4 abajo -->
-<section id="encargos" class="encargos-wrap">
-  <h2 class="section-title">Encargos p5.js</h2>
+    <!-- =========================================================
+         MIS PROYECTOS p5.js (tarjetas 2×2, imagen + título + subtítulo)
+         ========================================================= -->
+    <section id="encargos" class="proj">
+      <div class="proj__heading">
+        <h2>Mis proyectos p5.js</h2>
+      </div>
 
-  <div class="encargos-grid">
-    <!-- Encargo 1 -->
-    <article class="card">
-      <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
-        <img class="thumb" src="encargo1.jpg" alt="Portada Encargo 1">
-      </a>
-      <a class="btn pastel-1 card-btn" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 1</a>
-    </article>
+      <div class="proj__grid">
+        <!-- Encargo 1 -->
+        <a class="proj-card" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+          <img class="proj-card__thumb" src="encargo1.jpg" alt="Encargo 1">
+          <div class="proj-card__body">
+            <h3 class="proj-card__title pastel-1">Encargo 1</h3>
+            <p class="proj-card__subtitle">The Dark Side of the Moon</p>
+          </div>
+        </a>
 
-    <!-- Encargo 2 -->
-    <article class="card">
-      <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro" target="_blank" rel="noopener">
-        <img class="thumb" src="encargo2.jpg" alt="Portada Encargo 2">
-      </a>
-      <a class="btn pastel-2 card-btn" href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro" target="_blank" rel="noopener">Encargo 2</a>
-    </article>
+        <!-- Encargo 2 -->
+        <a class="proj-card" href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro" target="_blank" rel="noopener">
+          <img class="proj-card__thumb" src="encargo2.jpg" alt="Encargo 2">
+          <div class="proj-card__body">
+            <h3 class="proj-card__title pastel-2">Encargo 2</h3>
+            <p class="proj-card__subtitle">Green Stuff</p>
+          </div>
+        </a>
 
-    <!-- Encargo 3 -->
-    <article class="card">
-      <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
-        <img class="thumb" src="encargo3.jpg" alt="Portada Encargo 3">
-      </a>
-      <a class="btn pastel-3 card-btn" href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 3</a>
-    </article>
+        <!-- Encargo 3 -->
+        <a class="proj-card" href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+          <img class="proj-card__thumb" src="encargo3.jpg" alt="Encargo 3">
+          <div class="proj-card__body">
+            <h3 class="proj-card__title pastel-3">Encargo 3</h3>
+            <p class="proj-card__subtitle">Patrón con formas</p>
+          </div>
+        </a>
 
-    <!-- Encargo 4 -->
-    <article class="card">
-      <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">
-        <img class="thumb" src="encargo4.jpg" alt="Portada Encargo 4">
-      </a>
-      <a class="btn pastel-4 card-btn" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 4</a>
-    </article>
-  </div>
-</section>
+        <!-- Encargo 4 -->
+        <a class="proj-card" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+          <img class="proj-card__thumb" src="encargo4.jpg" alt="Encargo 4">
+          <div class="proj-card__body">
+            <h3 class="proj-card__title pastel-4">Encargo 4</h3>
+            <p class="proj-card__subtitle">Cuadrados con slider</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer class="wrap footer">
     <small>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</small>
   </footer>
 
-  <!-- Fondo interactivo (burbujas pastel) -->
+  <!-- ===== Fondo interactivo (burbujas pastel) ===== -->
   <script>
   (function(){
     const c = document.getElementById('bg-canvas');
@@ -107,13 +117,10 @@
       ctx.clearRect(0,0,W,H);
       for(const o of orbs){
         o.x+=o.vx; o.y+=o.vy;
-        // wrap suave
         if(o.x<-50) o.x=W+50; if(o.x>W+50) o.x=-50;
         if(o.y<-50) o.y=H+50; if(o.y>H+50) o.y=-50;
-        // ligera atracción al mouse
         const dx=mouse.x-o.x, dy=mouse.y-o.y, d2=dx*dx+dy*dy;
         if(d2<180*180){ o.vx+=dx*0.00004; o.vy+=dy*0.00004; }
-        // dibujar
         const g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r*1.4);
         g.addColorStop(0,o.col+'ee'); g.addColorStop(1,o.col+'00');
         ctx.fillStyle=g; ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2); ctx.fill();
