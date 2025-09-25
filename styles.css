@@ -96,38 +96,38 @@ body{
   border-radius: 18px;
   box-shadow: 0 14px 40px rgba(31,35,40,.12);
   overflow: hidden;
-  text-decoration: none;       /* toda la tarjeta es link */
+  text-decoration: none;       
   display: flex;
   flex-direction: column;
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .proj-card:hover{ transform: translateY(-4px); box-shadow: 0 18px 48px rgba(31,35,40,.16); }
 
-/* imagen arriba */
+/* imagen más chica */
 .proj-card__thumb{
   width: 100%;
-  aspect-ratio: 16/10;
+  height: 140px;          /* 👈 antes era muy alto, ahora fijo en 140px */
   object-fit: cover;
   display:block;
   border-bottom: 1px solid var(--line);
 }
 
 /* cuerpo de la tarjeta */
-.proj-card__body{ padding: 14px 16px 18px; text-align:center; }
+.proj-card__body{ padding: 12px 14px 16px; text-align:center; }
 .proj-card__title{
   display:inline-block;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 900;
   color:#0f1419;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,.05);
   box-shadow: var(--shadow);
 }
 .proj-card__subtitle{
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--muted);
-  font-size: .95rem;
+  font-size: .9rem;
 }
 
 /* Footer */
