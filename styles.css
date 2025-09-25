@@ -1,18 +1,17 @@
 /* ====== Paleta y base ====== */
 :root{
-  /* fondo claro y tipografía */
   --bg:#fafbfc;
   --panel:#ffffff;
   --ink:#1f2328;
   --muted:#57606a;
   --line:#e6e8eb;
 
-  /* Pasteles más vibrantes (acento) */
+  /* Pasteles intensos */
   --p1:#ff9bb3;  /* rosa intenso */
   --p2:#ffc77a;  /* durazno vivo */
   --p3:#8ff0b6;  /* menta brillante */
   --p4:#9ec6ff;  /* celeste vivo */
-  --p5:#d5a8ff;  /* lavanda vivo (por si lo quieres usar) */
+  --p5:#d5a8ff;  /* lavanda vivo */
 
   --radius:14px;
   --shadow:0 8px 28px rgba(31,35,40,.08);
@@ -27,13 +26,23 @@ body{
   line-height: 1.6;
 }
 
-/* ====== Contenedor ====== */
+/* ====== Fondo interactivo ====== */
+#bg-canvas{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;            /* detrás de todo */
+  pointer-events: none;   /* no bloquea clics */
+  opacity: .55;           /* sutil */
+}
+
 .wrap{ width:min(100%,960px); margin:0 auto; padding:24px 20px; }
 
 /* ====== Navbar fijo ====== */
 .site-nav{
   position:sticky; top:0; z-index:10;
-  display:flex; gap:14px; align-items:center;
+  display:flex; gap:14px; align-items:center; justify-content:center;
   padding:10px 16px;
   background:rgba(250,251,252,.92);
   backdrop-filter: blur(6px);
@@ -96,15 +105,43 @@ body{
 /* ====== Títulos de sección ====== */
 .section-title{ font-size:1.55rem; margin:26px 0 12px; }
 
+/* ====== Portadas de los sketches (previews) ====== */
+.previews-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.preview{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.preview iframe{
+  width: 100%;
+  aspect-ratio: 16/10;
+  border: 0;
+  display: block;
+}
+.preview-caption{
+  display: block;
+  text-align: center;
+  padding: 10px 8px;
+  font-weight: 900;
+  color: #0f1419;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
 /* ====== Encargos (grid + tarjetas coloreadas) ====== */
 .grid-4{
   display:grid; grid-template-columns: repeat(4,1fr);
   gap:14px; margin-top: 10px;
 }
-
-/* IMPORTANTE:
-   Ya NO pintamos en blanco las tarjetas.
-   Cada .card-btn toma su color desde la clase pastel-1..4 del HTML. */
 .card-btn{
   display:grid; place-items:center;
   height: 92px;
@@ -117,18 +154,6 @@ body{
   transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 .card-btn:hover{ transform: translateY(-2px); filter: saturate(1.08); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
-
-/* ====== Proceso / wireframe (si lo usas) ====== */
-.section-block{ padding:18px; }
-.proceso{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.wf-box{
-  padding:14px; border:1px dashed var(--line); border-radius:10px;
-  color:var(--muted); background:#fff; white-space:pre-wrap;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size:.95rem;
-}
-.decisiones ul{ padding-left:18px; }
-.decisiones li{ margin:6px 0; }
 
 /* ====== Footer y helpers ====== */
 .muted{ color:var(--muted); }
@@ -144,9 +169,10 @@ body{
 /* ====== Responsive ====== */
 @media (max-width: 900px){
   .grid-4{ grid-template-columns: repeat(2,1fr); }
-  .proceso{ grid-template-columns: 1fr; }
+  .previews-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 540px){
   .grid-4{ grid-template-columns: 1fr; }
+  .previews-grid{ grid-template-columns: 1fr; }
   .site-nav{ gap:10px; padding:8px 12px; }
 }
