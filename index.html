@@ -8,13 +8,12 @@
 </head>
 <body>
 
-  <!-- CANVAS de fondo interactivo -->
+  <!-- CANVAS de fondo interactivo (siempre detrás) -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- NAV simple -->
+  <!-- NAV -->
   <nav class="site-nav">
     <a href="#inicio">Inicio</a>
-    <a href="#previews">Portadas</a>
     <a href="#encargos">Encargos</a>
   </nav>
 
@@ -51,41 +50,52 @@
       </a>
     </div>
 
-    <!-- PORTADAS DE LOS SKETCHES (previews en vivo) -->
-    <section id="previews" class="wrap section-block">
-      <h2 class="section-title">Portadas de los sketches</h2>
-      <div class="previews-grid">
-        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" target="_blank" rel="noopener">
-          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" title="Encargo 1" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <span class="preview-caption">Encargo 1</span>
-        </a>
-        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" target="_blank" rel="noopener">
-          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" title="Encargo 2" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <span class="preview-caption">Encargo 2</span>
-        </a>
-        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" target="_blank" rel="noopener">
-          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" title="Encargo 3" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <span class="preview-caption">Encargo 3</span>
-        </a>
-        <a class="preview" href="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" target="_blank" rel="noopener">
-          <iframe src="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" title="Encargo 4" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <span class="preview-caption">Encargo 4</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ENCARGOS p5.js (los botones se mantienen) -->
-    <section id="encargos">
+    <!-- ENCARGOS: tarjetas con iframe arriba + botón pegado abajo -->
+    <section id="encargos" class="section-block">
       <h2 class="section-title">Encargos p5.js</h2>
-      <div class="grid-4">
-        <a class="card-btn pastel-1" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega">Encargo 1</a>
-        <a class="card-btn pastel-2" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro">Encargo 2</a>
-        <a class="card-btn pastel-3" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega">Encargo 3</a>
-        <a class="card-btn pastel-4" target="_blank" rel="noopener"
-           href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega">Encargo 4</a>
+
+      <div class="encargos-grid">
+        <!-- Columna izquierda -->
+        <div class="col">
+          <!-- Encargo 1 -->
+          <article class="encargo">
+            <div class="frame-wrap">
+              <iframe src="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" title="Encargo 1" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            </div>
+            <a class="btn pastel-1 encargo-btn" target="_blank" rel="noopener"
+               href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega">Encargo 1</a>
+          </article>
+
+          <!-- Encargo 3 -->
+          <article class="encargo">
+            <div class="frame-wrap">
+              <iframe src="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" title="Encargo 3" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            </div>
+            <a class="btn pastel-3 encargo-btn" target="_blank" rel="noopener"
+               href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega">Encargo 3</a>
+          </article>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col">
+          <!-- Encargo 2 -->
+          <article class="encargo">
+            <div class="frame-wrap">
+              <iframe src="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" title="Encargo 2" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            </div>
+            <a class="btn pastel-2 encargo-btn" target="_blank" rel="noopener"
+               href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro">Encargo 2</a>
+          </article>
+
+          <!-- Encargo 4 -->
+          <article class="encargo">
+            <div class="frame-wrap">
+              <iframe src="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" title="Encargo 4" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            </div>
+            <a class="btn pastel-4 encargo-btn" target="_blank" rel="noopener"
+               href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega">Encargo 4</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -95,74 +105,70 @@
     <small>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</small>
   </footer>
 
-  <!-- === Fondo interactivo (vanilla JS, sin librerías) === -->
+  <!-- === Fondo interactivo (vanilla JS) === -->
   <script>
-    (function(){
-      const c = document.getElementById('bg-canvas');
-      const ctx = c.getContext('2d', { alpha: true });
-      let W, H, orbs = [], mouse = {x: 0, y: 0};
+  (function(){
+    const c = document.getElementById('bg-canvas');
+    const ctx = c.getContext('2d', { alpha: true });
+    let W, H, orbs = [], mouse = {x: 0, y: 0};
 
-      function resize(){
-        W = c.width = window.innerWidth;
-        H = c.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize, {passive:true});
-      resize();
+    function resize(){
+      W = c.width = window.innerWidth;
+      H = c.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize, {passive:true});
+    resize();
 
-      const PALETTE = ['#ff9bb3','#ffc77a','#8ff0b6','#9ec6ff','#d5a8ff'];
+    const PALETTE = ['#ff9bb3','#ffc77a','#8ff0b6','#9ec6ff','#d5a8ff'];
 
-      function makeOrb() {
-        const r = Math.random()*22 + 10;
-        return {
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r,
-          vx: (Math.random()*1.2 - 0.6),
-          vy: (Math.random()*1.2 - 0.6),
-          color: PALETTE[(Math.random()*PALETTE.length)|0],
-          a: 0.18 + Math.random()*0.12
-        };
-      }
+    function makeOrb() {
+      const r = Math.random()*22 + 10;
+      return {
+        x: Math.random()*W,
+        y: Math.random()*H,
+        r,
+        vx: (Math.random()*1.2 - 0.6),
+        vy: (Math.random()*1.2 - 0.6),
+        color: PALETTE[(Math.random()*PALETTE.length)|0],
+        a: 0.18 + Math.random()*0.12
+      };
+    }
 
-      for (let i=0;i<26;i++) orbs.push(makeOrb());
+    for (let i=0;i<26;i++) orbs.push(makeOrb());
 
-      window.addEventListener('mousemove', e => {
-        mouse.x = e.clientX; mouse.y = e.clientY;
-      }, {passive:true});
+    window.addEventListener('mousemove', e => {
+      mouse.x = e.clientX; mouse.y = e.clientY;
+    }, {passive:true});
 
-      function step(){
-        ctx.clearRect(0,0,W,H);
-        for (const o of orbs){
-          // movimiento básico
-          o.x += o.vx; o.y += o.vy;
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      for (const o of orbs){
+        o.x += o.vx; o.y += o.vy;
 
-          // rebote en bordes
-          if (o.x < -50) o.x = W+50;
-          if (o.x > W+50) o.x = -50;
-          if (o.y < -50) o.y = H+50;
-          if (o.y > H+50) o.y = -50;
+        if (o.x < -50) o.x = W+50;
+        if (o.x > W+50) o.x = -50;
+        if (o.y < -50) o.y = H+50;
+        if (o.y > H+50) o.y = -50;
 
-          // leve atracción al mouse
-          const dx = mouse.x - o.x, dy = mouse.y - o.y;
-          const d2 = dx*dx + dy*dy;
-          if (d2 < 180*180) { // zona de influencia
-            o.vx += dx * 0.00004;
-            o.vy += dy * 0.00004;
-          }
-
-          // dibujar
-          const g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r*1.4);
-          g.addColorStop(0, o.color + 'ee');
-          g.addColorStop(1, o.color + '00');
-          ctx.fillStyle = g;
-          ctx.beginPath();
-          ctx.arc(o.x, o.y, o.r, 0, Math.PI*2);
-          ctx.fill();
+        const dx = mouse.x - o.x, dy = mouse.y - o.y;
+        const d2 = dx*dx + dy*dy;
+        if (d2 < 180*180) {
+          o.vx += dx * 0.00004;
+          o.vy += dy * 0.00004;
         }
-        requestAnimationFrame(step);
+
+        const g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r*1.4);
+        g.addColorStop(0, o.color + 'ee');
+        g.addColorStop(1, o.color + '00');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(o.x, o.y, o.r, 0, Math.PI*2);
+        ctx.fill();
       }
-      step();
-    })();
+      requestAnimationFrame(step);
+    }
+    step();
+  })();
   </script>
 </body>
 </html>
