@@ -37,9 +37,10 @@ body{
   opacity: .55;           /* sutil */
 }
 
+/* ====== Estructura ====== */
 .wrap{ width:min(100%,960px); margin:0 auto; padding:24px 20px; }
 
-/* ====== Navbar fijo ====== */
+/* ====== Navbar ====== */
 .site-nav{
   position:sticky; top:0; z-index:10;
   display:flex; gap:14px; align-items:center; justify-content:center;
@@ -55,7 +56,7 @@ body{
 }
 .site-nav a:hover{ color:var(--ink); background:#eef0f2; transform: translateY(-1px); }
 
-/* ====== Título con gradiente pastel intenso ====== */
+/* ====== Título ====== */
 .title-pastel{
   text-align:center; font-weight:900; letter-spacing:.3px;
   font-size: clamp(2rem, 6vw, 3.2rem);
@@ -64,7 +65,7 @@ body{
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 
-/* ====== Bloques (tarjetas) ====== */
+/* ====== Bloques ====== */
 .bubble, .accordion, .section-block{
   background: var(--panel);
   border:1px solid var(--line);
@@ -85,7 +86,7 @@ body{
 .accordion__content{ padding:16px; color:var(--muted); background: var(--panel); }
 .btn-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
 
-/* ====== Botones comunes ====== */
+/* ====== Botones ====== */
 .btn{
   display:inline-block; text-decoration:none; font-weight:800;
   padding:10px 16px; border-radius:12px; color:#0f1419;
@@ -94,68 +95,55 @@ body{
 }
 .btn:hover{ transform: translateY(-2px); filter: saturate(1.05) contrast(1.02); box-shadow: var(--shadow); }
 .xl{ padding:12px 18px; font-size:1.04rem; }
-
-/* Colores para botones comunes */
 .pastel-1{ background: var(--p1); }
 .pastel-2{ background: var(--p2); }
 .pastel-3{ background: var(--p3); }
 .pastel-4{ background: var(--p4); }
 .pastel-5{ background: var(--p5); }
 
-/* ====== Títulos de sección ====== */
+/* ====== Secciones ====== */
 .section-title{ font-size:1.55rem; margin:26px 0 12px; }
 
-/* ====== Portadas de los sketches (previews) ====== */
-.previews-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+/* ====== Encargos: 2 columnas (1/3 izq, 2/4 der) ====== */
+.encargos-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 20px;
 }
-.preview{
+.col{ display:flex; flex-direction:column; gap:20px; }
+
+.encargo{
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
-  overflow: hidden;
+  overflow: hidden;              /* para que el botón quede PEGADO */
   display: flex;
   flex-direction: column;
-  text-decoration: none;
 }
-.preview iframe{
+
+/* Marco del iframe para asegurar proporción y que el botón quede pegado */
+.frame-wrap{
+  position: relative;
   width: 100%;
   aspect-ratio: 16/10;
+  overflow: hidden;
+}
+.encargo iframe{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   border: 0;
   display: block;
 }
-.preview-caption{
-  display: block;
-  text-align: center;
-  padding: 10px 8px;
-  font-weight: 900;
-  color: #0f1419;
-  background: #fff;
-  border-top: 1px solid var(--line);
-}
 
-/* ====== Encargos (grid + tarjetas coloreadas) ====== */
-.grid-4{
-  display:grid; grid-template-columns: repeat(4,1fr);
-  gap:14px; margin-top: 10px;
-}
-.card-btn{
-  display:grid; place-items:center;
-  height: 92px;
-  text-decoration:none;
-  color:#0f1419;
+/* Botón pegado al encargo (sin espacios) */
+.encargo-btn{
+  display:block; width:100%;
+  border-radius: 0 0 var(--radius) var(--radius);
+  text-align:center;
   font-weight:900;
-  border-radius:16px;
-  border:1px solid rgba(0,0,0,.06);
-  box-shadow: var(--shadow);
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  border-top: 1px solid rgba(0,0,0,.06);
 }
-.card-btn:hover{ transform: translateY(-2px); filter: saturate(1.08); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
 
-/* ====== Footer y helpers ====== */
+/* ====== Footer ====== */
 .muted{ color:var(--muted); }
 .footer{
   text-align:center; color:var(--muted);
@@ -163,16 +151,13 @@ body{
   margin-top:34px; padding-top:18px;
 }
 
-/* offset para anclas debajo del navbar */
+/* Offset de anclas bajo navbar */
 [id]{ scroll-margin-top: 80px; }
 
 /* ====== Responsive ====== */
 @media (max-width: 900px){
-  .grid-4{ grid-template-columns: repeat(2,1fr); }
-  .previews-grid{ grid-template-columns: repeat(2, 1fr); }
+  .encargos-grid{ grid-template-columns: 1fr; }
 }
 @media (max-width: 540px){
-  .grid-4{ grid-template-columns: 1fr; }
-  .previews-grid{ grid-template-columns: 1fr; }
   .site-nav{ gap:10px; padding:8px 12px; }
 }
