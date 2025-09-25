@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio IE 2025</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio IE 2025 — Beatriz Castro Vega</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Fondo interactivo -->
-  <canvas id="bgCanvas"></canvas>
+
+  <!-- Fondo interactivo SIEMPRE detrás -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- NAV -->
-  <nav class="navbar">
-    <a href="#">Inicio</a>
+  <nav class="site-nav">
+    <a href="#inicio">Inicio</a>
     <a href="#encargos">Encargos</a>
   </nav>
 
   <!-- TÍTULO -->
-  <header>
-    <h1>Portafolio IE 2025</h1>
+  <header id="inicio" class="wrap">
+    <h1 class="title-pastel">Portafolio IE 2025</h1>
   </header>
 
-  <!-- BURBUJA PRESENTACIÓN -->
-  <section class="intro">
-    <p><strong>Imagen escrita</strong> es una asignatura que se centra en la intersección entre diseño, la programación y arte generativo. 
-    Utilizando <strong>p5.js</strong> como herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.</p>
+  <main class="wrap">
+    <!-- Intro -->
+    <section class="bubble">
+      <p><strong>Imagen escrita</strong> es una asignatura que se centra en la intersección entre diseño, la programación y arte generativo. Utilizando <strong>p5.js</strong> como herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.</p>
+      <p>A través del <em>creative coding</em> se enfatiza el pensamiento computacional como herramienta de diseño. La integración de herramientas de IA amplía posibilidades creativas y técnicas, complementando el proceso de diseño y programación.</p>
+    </section>
 
-    <p>A través del <em>creative coding</em> se hace énfasis en el pensamiento computacional como herramienta de diseño, fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. 
-    La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como complemento al proceso de diseño y programación.</p>
-  </section>
-
-  <!-- SOBRE LA AUTORA -->
-  <section class="autora">
-    <details>
-      <summary>Sobre la autora</summary>
-      <p>Este sitio web fue desarrollado como parte del curso <strong>Imagen Escrita 2025</strong> por <strong>Beatriz Castro Vega</strong>, alumna de Diseño en la Pontificia Universidad Católica de Valparaíso.</p>
-      <p><strong>Redes de contacto:</strong></p>
-      <div class="btn-row">
-        <a class="btn pastel-1" href="https://wiki.ead.pucv.cl/Beatriz_Castro_Vega" target="_blank">Perfil wikicasiopea</a>
-        <a class="btn pastel-2" href="mailto:beatriz.castro.v@mail.pucv.cl">Correo</a>
+    <!-- Autora -->
+    <details class="accordion">
+      <summary class="accordion__summary">Sobre la autora</summary>
+      <div class="accordion__content">
+        <p>Proyecto del curso <strong>Imagen Escrita 2025</strong> por <strong>Beatriz Castro Vega</strong>, Diseño · PUCV.</p>
+        <div class="btn-row">
+          <a class="btn pastel-1" href="https://wiki.ead.pucv.cl/Beatriz_Castro_Vega" target="_blank" rel="noopener">Perfil wikicasiopea</a>
+          <a class="btn pastel-2" href="mailto:beatriz.castro.v@mail.pucv.cl">Correo</a>
+        </div>
       </div>
     </details>
-    <a class="btn pastel-3" href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Beatriz_Castro_Vega" target="_blank">Wiki del proyecto</a>
-  </section>
 
-  <!-- ENCARGOS -->
-  <section id="encargos" class="encargos">
-    <h2>Encargos p5.js</h2>
-    <div class="grid-encargos">
-
-      <!-- Encargo 1 -->
-      <div class="encargo">
-        <img src="encargo1.jpg" alt="Encargo 1">
-        <a class="btn pastel-1" href="https://editor.p5js.org/beatriz.castro.v/full/V6Zx-rZy1" target="_blank">Encargo 1</a>
-      </div>
-
-      <!-- Encargo 2 -->
-      <div class="encargo">
-        <img src="encargo2.jpg" alt="Encargo 2">
-        <a class="btn pastel-2" href="https://editor.p5js.org/beatriz.castro.v/full/VdoJbJUfI" target="_blank">Encargo 2</a>
-      </div>
-
-      <!-- Encargo 3 -->
-      <div class="encargo">
-        <img src="encargo3.jpg" alt="Encargo 3">
-        <a class="btn pastel-3" href="https://editor.p5js.org/beatriz.castro.v/full/_Zc03VPdx" target="_blank">Encargo 3</a>
-      </div>
-
-      <!-- Encargo 4 -->
-      <div class="encargo">
-        <img src="encargo4.jpg" alt="Encargo 4">
-        <a class="btn pastel-4" href="https://editor.p5js.org/beatriz.castro.v/full/zb1UGgnxe" target="_blank">Encargo 4</a>
-      </div>
-
+    <div class="center">
+      <a class="btn xl pastel-3" href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">Wiki del proyecto</a>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</p>
+    <!-- ENCARGOS: 2 columnas (1–2 arriba, 3–4 abajo). Foto + botón pegado -->
+    <section id="encargos" class="section-block">
+      <h2 class="section-title">Encargos p5.js</h2>
+
+      <div class="encargos-grid">
+        <!-- 1 (arriba izquierda) -->
+        <article class="encargo">
+          <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+            <img class="thumb" src="encargo1.jpg" alt="Encargo 1">
+          </a>
+          <a class="btn pastel-1 encargo-btn" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_The_Dark_Side_of_the_Moon_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 1</a>
+        </article>
+
+        <!-- 2 (arriba derecha) -->
+        <article class="encargo">
+          <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro" target="_blank" rel="noopener">
+            <img class="thumb" src="encargo2.jpg" alt="Encargo 2">
+          </a>
+          <a class="btn pastel-2 encargo-btn" href="https://wiki.ead.pucv.cl/Encargo_2_IE_-_Beatriz_Castro" target="_blank" rel="noopener">Encargo 2</a>
+        </article>
+
+        <!-- 3 (abajo izquierda) -->
+        <article class="encargo">
+          <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+            <img class="thumb" src="encargo3.jpg" alt="Encargo 3">
+          </a>
+          <a class="btn pastel-3 encargo-btn" href="https://wiki.ead.pucv.cl/Encargo_3_IE_/_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 3</a>
+        </article>
+
+        <!-- 4 (abajo derecha) -->
+        <article class="encargo">
+          <a class="thumb-link" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">
+            <img class="thumb" src="encargo4.jpg" alt="Encargo 4">
+          </a>
+          <a class="btn pastel-4 encargo-btn" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Beatriz_Castro_Vega" target="_blank" rel="noopener">Encargo 4</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <small>© 2025 · Beatriz Castro Vega · Publicado en GitHub Pages</small>
   </footer>
 
-  <!-- Script del fondo -->
+  <!-- Fondo interactivo (burbujas pastel) -->
   <script>
-    const canvas = document.getElementById("bgCanvas");
-    const ctx = canvas.getContext("2d");
-    let w, h, particles = [];
-
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+  (function(){
+    const c = document.getElementById('bg-canvas');
+    const ctx = c.getContext('2d', { alpha: true });
+    let W, H, orbs = [], mouse = {x: 0, y: 0};
+    function resize(){ W = c.width = innerWidth; H = c.height = innerHeight; }
+    addEventListener('resize', resize, {passive:true}); resize();
+    const P = ['#ff9bb3','#ffc77a','#8ff0b6','#9ec6ff','#d5a8ff'];
+    function make(){ const r=Math.random()*22+10;
+      return {x:Math.random()*W,y:Math.random()*H,r,
+              vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2,
+              col:P[(Math.random()*P.length)|0]}; }
+    for(let i=0;i<26;i++) orbs.push(make());
+    addEventListener('mousemove', e=>{mouse.x=e.clientX; mouse.y=e.clientY;},{passive:true});
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      for(const o of orbs){
+        o.x+=o.vx; o.y+=o.vy;
+        // wrap suave
+        if(o.x<-50) o.x=W+50; if(o.x>W+50) o.x=-50;
+        if(o.y<-50) o.y=H+50; if(o.y>H+50) o.y=-50;
+        // ligera atracción al mouse
+        const dx=mouse.x-o.x, dy=mouse.y-o.y, d2=dx*dx+dy*dy;
+        if(d2<180*180){ o.vx+=dx*0.00004; o.vy+=dy*0.00004; }
+        // dibujar
+        const g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r*1.4);
+        g.addColorStop(0,o.col+'ee'); g.addColorStop(1,o.col+'00');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2); ctx.fill();
+      }
+      requestAnimationFrame(tick);
     }
-    window.addEventListener("resize", resize);
-    resize();
-
-    for (let i = 0; i < 60; i++) {
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 4 + 1,
-        dx: (Math.random() - 0.5) * 1.5,
-        dy: (Math.random() - 0.5) * 1.5
-      });
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      ctx.fillStyle = "rgba(200, 220, 255, 0.4)";
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > w) p.dx *= -1;
-        if (p.y < 0 || p.y > h) p.dy *= -1;
-      });
-      requestAnimationFrame(draw);
-    }
-    draw();
+    tick();
+  })();
   </script>
 </body>
 </html>
